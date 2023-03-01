@@ -21,7 +21,7 @@ const sendEmail = (req, res) => {
   const mailOptions = {
     from: email,
     replyTo: email,
-    to: process.env.EMAIl_USER_NAME,
+    to: `${process.env.EMAIl_USER_NAME}`,
     subject: 'New message from your website',
     text: `${name} (${email}) has sent you a message:\n\n${message}`,
     attachments: attachments,
