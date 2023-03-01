@@ -13,8 +13,8 @@ const sendEmail = (req, res) => {
     port: '465',
     sender: 'gmail',
     auth: {
-      user: process.env.EMAIl_USER_NAME,
-      pass: process.env.EMAIl_PASSWORD,
+      user: `${process.env.EMAIl_USER_NAME}`,
+      pass: `${process.env.EMAIl_PASSWORD}`,
     },
   });
 
