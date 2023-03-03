@@ -13,15 +13,15 @@ const sendEmail = (req, res) => {
     port: '465',
     sender: 'gmail',
     auth: {
-      user: `ts.dimitrov93@gmail.com`,
-      pass: `dpwnxunmlzvtvuzi`,
+      user: `stefanytomova@gmail.com`,
+      pass: `qowpmlpwdjhpvevj`,
     },
   });
 
   const mailOptions = {
     from: email,
     replyTo: email,
-    to: `ts.dimitrov93@gmail.com`,
+    to: `stefanytomova@gmail.com`,
     subject: 'New message from your website',
     text: `${name} (${email}) has sent you a message:\n\n${message}`,
     attachments: attachments,
