@@ -10,6 +10,8 @@ const {PORT}        = require('./config/env.js')
 
 const authRoute     = require('./routes/auth');
 const emailRoutes   = require('./routes/emailRoutes');
+const uploadRouter  = require('./routes/upload');
+const imagesRouter  = require('./routes/images');
 
 
 app.use((req, res, next) => {
@@ -25,6 +27,9 @@ app.use(cookieParser());
 
 app.use(auth)
 app.use("/api/auth", authRoute)
+app.use('/api/upload', uploadRouter);
+app.use('/api/images', imagesRouter);
+
 app.use('/', emailRoutes);
 
 
