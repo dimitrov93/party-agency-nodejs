@@ -26,12 +26,10 @@ app.use(express.static(path.join(__dirname, 'src', 'public')));
 app.use(cookieParser());
 
 app.use(auth)
-app.use("/api/auth", authRoute)
-app.use('/api/upload', uploadRouter);
-app.use('/api/images', imagesRouter);
-
 app.use('/', emailRoutes);
-
+app.use("/api/auth", authRoute)
+app.use('/api/images', imagesRouter);
+app.use('/api/upload', uploadRouter);
 
 dbInit();
 
