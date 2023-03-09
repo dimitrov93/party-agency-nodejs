@@ -29,6 +29,7 @@ router.get('/:type', async (req, res) => {
 
     const imagesWithMetadata = images.map((image) => {
       return {
+        _id: image._id,
         title: image.title,
         images: image.images.map((img) => {
           return {
@@ -44,6 +45,19 @@ router.get('/:type', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
+  }
+});
+
+//DELETE
+router.delete("/:type/:id/delete", async (req, res) => {
+  const type = req.params.type; 
+
+  const Schema = schemaMap[type];
+  try {
+    await Schema.findByIdAndDelete(req.params.id);
+    res.status(200).json("Product has been deleted...");
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
