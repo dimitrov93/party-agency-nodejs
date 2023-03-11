@@ -21,7 +21,7 @@ const schemaMap = {
 };
 
 
-router.post("/:type", upload.array("images[]", 10), async (req, res) => {
+router.post("/:type", upload.array("images[]", 20), async (req, res) => {
   const type = req.params.type;
   const title = req.body.title;
   const files = req.files;
