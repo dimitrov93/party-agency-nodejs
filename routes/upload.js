@@ -6,6 +6,9 @@ const Anniversary = require("../models/Anniversary");
 const Baptism = require("../models/Baptism");
 const Prom = require("../models/Prom");
 const Wedding = require("../models/Wedding");
+const Invitation = require("../models/Invitation");
+const Card = require("../models/Card");
+const Table = require("../models/Table");
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -17,7 +20,10 @@ const schemaMap = {
   anniversary: Anniversary,
   baptism: Baptism,
   prom: Prom,
-  wedding: Wedding
+  wedding: Wedding,
+  invitations: Invitation,
+  cards: Card,
+  tables: Table
 };
 
 

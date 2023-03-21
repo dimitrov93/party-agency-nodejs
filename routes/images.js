@@ -5,6 +5,10 @@ const Anniversary = require("../models/Anniversary");
 const Baptism = require("../models/Baptism");
 const Prom = require("../models/Prom");
 const Wedding = require("../models/Wedding");
+const Invitation = require("../models/Invitation");
+const Card = require("../models/Card");
+const Table = require("../models/Table");
+
 const router = express.Router();
 
 const schemaMap = {
@@ -13,6 +17,9 @@ const schemaMap = {
   baptism: Baptism,
   prom: Prom,
   wedding: Wedding,
+  invitations: Invitation,
+  cards: Card,
+  tables: Table
 };
 
 // get by id
