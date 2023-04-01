@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use(cors(({origin: ["https://talefairy.netlify.app", "http://localhost:3000", "http://localhost:4200"], credentials: true})))
+app.use(cors(({origin: ["https://dimitrov93.eu", "https://talefairy.netlify.app", "http://localhost:3000", "http://localhost:4200"], credentials: true})))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'src', 'public')));
