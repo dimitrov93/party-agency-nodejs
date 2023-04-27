@@ -23,12 +23,13 @@ exports.login = async (email, password) => {
 
 
 exports.createToken = (user) => {
-    const payload = {_id: user._id, username: user.username, email: user.email};
+    const payload = {_id: user._id, email: user.email};
     const options = {expiresIn: "2d"};
 
     return new Promise((resolve, reject) => {
         jwt.sign(payload, SECRET, options, (err, decodedToken) => {
             if (err) {
+                console.log('token error ' + err);
                 return reject(err)
             }
             resolve(decodedToken)

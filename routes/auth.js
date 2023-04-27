@@ -25,14 +25,18 @@ router.post('/login', async (req,res) => {
     try {
         const user = await authService.login(email, password);
         const token = await authService.createToken(user);
-    
-        console.log('Token ' + token);
-        res.cookie(COOKIE_SESSION_NAME, token, {httpOnly: true});
+
+        res.cookie(COOKIE_SESSION_NAME, token, {httpOnly: true, sameSite: 'none', maxAge: 60 * 60 * 24 * 7, secure: true});
         res.status(200).json(user)
     } catch (error) {
         res.status(500).json(error)
-
     }
 })
+
+//Logout
+router.get('/logout',  (req,res) => {
+    res.clearCookie(COOKIE_SESSION_NAME);
+    res.redirect('/')
+});
 
 module.exports = router;

@@ -23,8 +23,10 @@ const sendEmail = (req, res) => {
     replyTo: email,
     to: `stefanytomova@gmail.com`,
     subject: 'New message from your website',
-    text: `${name} (${email}) has sent you a message:\n\n${message}`,
+    text: `Name: ${name}\nEmail: ${email}\n\nHas sent you a message:\n${message}`,
+
     attachments: attachments,
+
   };
 
   transporter.sendMail(mailOptions, (err, info) => {
